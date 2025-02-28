@@ -1,5 +1,7 @@
 package tp2.src.main.java.edu.ensai.library;
 
+import java.util.Objects;
+
 public class Author {
 
     // Attributes
@@ -8,10 +10,23 @@ public class Author {
     public String nationality;
 
     // Constructor
-    public Author(String name, int age, String nationality) {
+    public Author(String name) {
         this.name = name;
-        this.age = age;
-        this.nationality = nationality;
     }
 
+    // Methods
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null || getClass() != obj.getClass())
+            return false;
+
+        Author author = (Author) obj;
+        return Objects.equals(name, author.name);
+    }
 }
