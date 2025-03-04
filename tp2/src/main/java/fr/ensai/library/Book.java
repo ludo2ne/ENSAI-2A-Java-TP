@@ -1,4 +1,4 @@
-package tp2.src.main.java.edu.ensai.library;
+package fr.ensai.library;
 
 public class Book extends Item {
     // Attributes

@@ -1,4 +1,4 @@
-package tp2.src.main.java.edu.ensai.library;
+package fr.ensai.library;
 
 import java.util.ArrayList;
 
