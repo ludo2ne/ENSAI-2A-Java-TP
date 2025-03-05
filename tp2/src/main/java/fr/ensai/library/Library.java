@@ -29,7 +29,7 @@ public class Library {
 
         System.out.println("\n**********************************************");
         System.out.println("* All items                                  *");
-        System.out.println("**********************************************\n");
+        System.out.println("**********************************************");
         if (items.isEmpty()) {
             System.out.println("The library is empty.");
         } else {
@@ -69,11 +69,6 @@ public class Library {
     public void loadBooksFromCSV(String filePath) {
 
         URL url = getClass().getClassLoader().getResource(filePath);
-
-        if (url == null) {
-            System.err.println("Error: Could not find resource file: " + filePath);
-            return;
-        }
 
         try (BufferedReader br = new BufferedReader(new FileReader(url.getFile()))) {
             Map<String, Author> authors = new HashMap<>();

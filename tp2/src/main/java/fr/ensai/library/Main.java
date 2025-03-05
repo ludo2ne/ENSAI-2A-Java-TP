@@ -13,13 +13,12 @@ public class Main {
 
         System.out.println("\n**********************************************");
         System.out.println("* Books by Stephen King                      *");
-        System.out.println("**********************************************\n");
+        System.out.println("**********************************************");
 
         ArrayList<Book> skingsBooks = library.getBooksByAuthor(new Author("Stephen King"));
 
         for (Book b : skingsBooks) {
             System.out.println(b);
         }
-
     }
 }
