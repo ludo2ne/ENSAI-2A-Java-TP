@@ -3,6 +3,7 @@ package fr.ensai.library;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -20,11 +21,15 @@ public class Library {
     }
 
     // Method to add a book to the library's collection
-    public void addBook(Item item) {
+    public void addIem(Item item) {
         items.add(item);
     }
 
     public void displayItems() {
+
+        System.out.println("\n**********************************************");
+        System.out.println("* All items                                  *");
+        System.out.println("**********************************************\n");
         if (items.isEmpty()) {
             System.out.println("The library is empty.");
         } else {
@@ -63,11 +68,14 @@ public class Library {
      */
     public void loadBooksFromCSV(String filePath) {
 
-        // URL url = Login.class.getClassLoader().getResource(filename);
-        // try (BufferedReader br = new BufferedReader(new FileReader(url.getFile()))) {
+        URL url = getClass().getClassLoader().getResource(filePath);
 
-        try (BufferedReader br = new BufferedReader(
-                new FileReader("/home/onyxia/work/ENSAI-2A-Java-TP/tp2/src/main/resources/books.csv"))) {
+        if (url == null) {
+            System.err.println("Error: Could not find resource file: " + filePath);
+            return;
+        }
+
+        try (BufferedReader br = new BufferedReader(new FileReader(url.getFile()))) {
             Map<String, Author> authors = new HashMap<>();
             String line;
             br.readLine(); // Skip the header line
@@ -87,10 +95,11 @@ public class Library {
                     if (author == null) {
                         author = new Author(authorName);
                         authors.put(authorName, author);
+                        System.out.println(author.toString());
                     }
                     Book book = new Book(isbn, title, author, year, pageCount);
 
-                    this.addBook(book);
+                    this.addIem(book);
                 }
             }
         } catch (

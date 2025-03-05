@@ -2,21 +2,19 @@ package fr.ensai.library;
 
 import java.util.Objects;
 
-public class Author {
+public class Author extends Person {
 
     // Attributes
-    public String name;
-    public int age;
     public String nationality;
 
     // Constructor
     public Author(String name) {
-        this.name = name;
+        super(name);
     }
 
     // Methods
     public String getName() {
-        return name;
+        return this.name;
     }
 
     @Override

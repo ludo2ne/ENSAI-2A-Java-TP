@@ -6,12 +6,14 @@ public class Main {
     public static void main(String[] args) {
         Library library = new Library("City Library");
 
-        String csvFilePath = "books.csv"; // Update path if necessary
+        String csvFilePath = "books.csv";
         library.loadBooksFromCSV(csvFilePath);
 
         library.displayItems();
 
-        System.out.println("---------------------------------------------");
+        System.out.println("\n**********************************************");
+        System.out.println("* Books by Stephen King                      *");
+        System.out.println("**********************************************\n");
 
         ArrayList<Book> skingsBooks = library.getBooksByAuthor(new Author("Stephen King"));
 

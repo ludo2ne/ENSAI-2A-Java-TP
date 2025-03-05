@@ -3,14 +3,17 @@ package fr.ensai.library;
 public class Person {
 
     // Attributes
-    public String firstName;
-    public String lastName;
+    public String name;
     public int age;
 
     // Constructor
-    public Person(String firstName, String lastName, int age) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Person(String name) {
+        this.name = name;
+    }
+
+    // Constructor
+    public Person(String name, int age) {
+        this.name = name;
         this.age = age;
     }
 
@@ -20,6 +23,6 @@ public class Person {
     }
 
     public String toString() {
-        return this.firstName + " " + this.lastName;
+        return this.getClass() + " " + this.name;
     }
 }
