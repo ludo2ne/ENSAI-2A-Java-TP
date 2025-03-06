@@ -3,10 +3,7 @@ package fr.ensai.library;
 public class Magazine extends Item {
     // Attributes
     private String issn;
-    private String title;
     private String issueNumber;
-    private int year;
-    private int pageCount;
 
     // Constructor
     public Magazine(String issn, String title, String issueNumber, int year, int pageCount) {
