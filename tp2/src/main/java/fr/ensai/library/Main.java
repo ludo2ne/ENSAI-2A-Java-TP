@@ -9,6 +9,10 @@ public class Main {
         String csvFilePath = "books.csv";
         library.loadBooksFromCSV(csvFilePath);
 
+        library.addIem(new Magazine("1234-5678", "Tech Monthly", "Vol. 15, Issue 3", 2023, 120));
+        library.addIem(new Magazine("9876-5432", "Vogue Style", "September Edition", 2024, 250));
+        library.addIem(new Magazine("1122-3344", "Scientific Discoveries", "Issue 247", 2022, 88));
+
         library.displayItems();
 
         System.out.println("\n**********************************************");

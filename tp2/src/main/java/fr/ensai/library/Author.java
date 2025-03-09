@@ -27,4 +27,9 @@ public class Author extends Person {
         Author author = (Author) obj;
         return Objects.equals(name, author.name);
     }
+
+    @Override
+    public String toString() {
+        return "Author " + name;
+    }
 }
