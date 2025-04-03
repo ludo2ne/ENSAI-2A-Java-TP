@@ -27,12 +27,12 @@ public class ApiRestController {
      */
     @GetMapping("/athlete")
     public List<Athlete> allAthletes() {
-
         return athleteService.findAll();
     }
 
     /**
      * Get an athlete by id
+     * 
      */
     @GetMapping("/athlete/{id}")
     public Athlete athleteById(@PathVariable long id) {
@@ -70,6 +70,4 @@ public class ApiRestController {
     //
     // return competitionService.findByIdAthleteAndIdCompetition(id_athlete,
     // id_competition);
-    // }
-
 }

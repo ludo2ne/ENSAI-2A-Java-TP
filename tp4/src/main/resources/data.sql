@@ -13,16 +13,16 @@ CREATE TABLE athlete (
 );
 
 INSERT INTO athlete (id_athlete, first_name, last_name, age, gender) VALUES
-(99990, 'Bowie', 'Kent', 25, 'Female'),
-(99991, 'Amour', 'Hire De Rire', 30, 'Male'),
-(99992, 'Aubin', 'Sahalor', 22, 'Male'),
-(99993, 'Aude', 'Hébussavabien', 35, 'Female'),
-(99994, 'Bart', 'Haba', 28, 'Male'),
-(99995, 'Bernadette', 'Dejeu', 21, 'Female'),
-(99996, 'André', 'Céouver', 40, 'Male'),
-(99997, 'Aphonse', 'Kelpeuv', 27, 'Female'),
-(99998, 'Bill', 'Hattérahl', 32, 'Male'),
-(99999, 'Bianca', 'Lamine', 24, 'Female');
+(99990, 'Alain', 'Provist', 27, 'Male'),
+(99991, 'Amour', 'Hire De Rire', 32, 'Male'),
+(99992, 'Aude', 'Hébussavabien', 23, 'Female'),
+(99993, 'Bill', 'Hattérahl', 31, 'Male'),
+(99994, 'Armelle', 'Couvert', 25, 'Female'),
+(99995, 'Beth', 'Rave', 28, 'Female'),
+(99996, 'Daisy', 'Dyossi', 35, 'Female'),
+(99997, 'Douglas', 'Ochocola', 22, 'Male'),
+(99998, 'Helmut', 'Tardeellepique', 41, 'Male'),
+(99999, 'Ines', 'Pairet', 29, 'Female');
 
 
 ----------------------------------------------
@@ -46,7 +46,6 @@ INSERT INTO competition (id_competition, designation, city, event_date, distance
 (88882, 'Rennes Urban Trail', 'Rennes', '2024-04-27', 24, 750),
 (88883, 'Tour de l''île d''Arz', 'Île d''Arz', '2024-05-17', 10, 300),
 (88884, 'Trail de l''Enfer', 'Plouguiel', '2024-07-06', 18, 200);
-
 
 ----------------------------------------------
 -- Registration
