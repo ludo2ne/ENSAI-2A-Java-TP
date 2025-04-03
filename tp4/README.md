@@ -6,7 +6,6 @@
 <https://user-ludo2ne-774720-user-9000.user.lab.sspcloud.fr/>
 
 
-
 ## Doc
 
 https://www.baeldung.com/spring-boot-start
