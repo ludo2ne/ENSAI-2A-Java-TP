@@ -16,6 +16,7 @@ public class Athlete {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_athlete")
     private long id;
+
     private String firstName;
     private String lastName;
     private int age;

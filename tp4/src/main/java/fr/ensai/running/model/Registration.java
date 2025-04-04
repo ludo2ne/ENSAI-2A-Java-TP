@@ -30,7 +30,6 @@ public class Registration {
     @JoinColumn(name = "id_competition")
     private Competition competition;
 
-    @Column(name = "registration_date")
     private LocalDate registrationDate;
 
     @Override

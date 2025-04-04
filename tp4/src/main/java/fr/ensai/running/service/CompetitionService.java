@@ -1,7 +1,6 @@
 package fr.ensai.running.service;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -36,10 +35,7 @@ public class CompetitionService {
      * List of all Competitions
      */
     public List<Competition> findAll() {
-        List<Competition> CompetitionsList = new ArrayList<>();
-        Iterable<Competition> CompetitionsIterable = competitionRepository.findAll();
-        CompetitionsIterable.forEach(CompetitionsList::add);
-        return CompetitionsList;
+        return competitionRepository.findAll();
     }
 
     /**

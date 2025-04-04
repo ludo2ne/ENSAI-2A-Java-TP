@@ -21,7 +21,7 @@ INSERT INTO athlete (id_athlete, first_name, last_name, age, gender) VALUES
 (99995, 'Beth', 'Rave', 28, 'Female'),
 (99996, 'Daisy', 'Dyossi', 35, 'Female'),
 (99997, 'Douglas', 'Ochocola', 22, 'Male'),
-(99998, 'Helmut', 'Tardeellepique', 41, 'Male'),
+(99998, 'Helmut', 'Tardelpic', 41, 'Male'),
 (99999, 'Ines', 'Pairet', 29, 'Female');
 
 
