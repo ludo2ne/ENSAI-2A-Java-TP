@@ -13,7 +13,7 @@ public class Author {
     private String nationality;
 
     /**
-     * Constructs a new Book object.
+     * Constructs a new Author object.
      */
     public Author(String name, int age, String nationality) {
         this.name = name;
@@ -37,12 +37,12 @@ public class Author {
             return false;
 
         Author author = (Author) obj;
-        return Objects.equals(name, author.name);
+        return Objects.equals(this.name, author.name);
     }
 
     @Override
     public String toString() {
-        return "Author " + name;
+        return String.format("Author %s", this.name);
     }
 
 }

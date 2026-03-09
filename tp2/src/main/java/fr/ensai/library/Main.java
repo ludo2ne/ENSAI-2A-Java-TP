@@ -13,6 +13,6 @@ public class Main {
                 1954,
                 423);
 
-        System.out.println(fellowshipOfTheRing.toString());
+        System.out.println(fellowshipOfTheRing);
     }
 }
