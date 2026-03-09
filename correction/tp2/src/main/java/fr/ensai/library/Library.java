@@ -17,7 +17,9 @@ public class Library {
     private List<Loan> activeLoans;
     private List<Loan> completedLoans;
 
-    // Constructor
+    /**
+     * Constructs a new Library object.
+     */
     public Library(String name) {
         this.name = name;
         this.items = new ArrayList<>();
@@ -27,29 +29,38 @@ public class Library {
 
     // Method to add a book to the library's collection
     public void addIem(Item item) {
-        items.add(item);
+        this.items.add(item);
     }
 
     public List<Loan> getActiveLoans() {
-        return activeLoans;
+        return this.activeLoans;
     }
 
     /**
      * Displays all items currently present in the library.
      */
     public void displayItems() {
-
-        System.out.println("\n**********************************************");
-        System.out.println("* All items                                  *");
-        System.out.println("**********************************************");
-        if (items.isEmpty()) {
-            System.out.println("The library is empty.");
-        } else {
-            for (Item item : items) {
-                System.out.println(item);
-            }
-        }
-    }
+		if (this.items.isEmpty()) {
+			System.out.println("\n[!] The library is empty.");
+			return;
+		}
+	
+		String rowFormat = "| %-10s | %-50s |%n";
+		String separator = "+------------+----------------------------------------------------+";
+	
+		System.out.println("\n" + separator);
+		System.out.printf(rowFormat, "Type", "Title");
+		System.out.println(separator);
+	
+		for (Item item : this.items) {
+			System.out.printf(rowFormat,
+                item.getClass().getSimpleName(),
+				item.getTitle()
+			);
+		}
+	
+		System.out.println(separator);
+	}
 
     /**
      * Retrieves a list of books written by a specific author.
@@ -57,14 +68,11 @@ public class Library {
      * @param author The author whose books are to be found.
      * @return A list of books written by the given author.
      */
-    public ArrayList<Book> getBooksByAuthor(Author author) {
+    public List<Book> getBooksByAuthor(Author author) {
         ArrayList<Book> result = new ArrayList<>();
         for (Item item : items) {
-            if (item instanceof Book) { // Check if the item is a Book
-                Book book = (Book) item; // Cast the item to a Book
-                if (book.getAuthor().equals(author)) {
-                    result.add(book);
-                }
+            if (item instanceof Book book && book.getAuthor().equals(author)) {
+                result.add(book);
             }
         }
         return result;
@@ -77,8 +85,8 @@ public class Library {
      * @return The Loan object if the item is currently loaned out, otherwise null.
      */
     public Loan findActiveLoanForItem(Item item) {
-        if (activeLoans != null) {
-            for (Loan loan : activeLoans) {
+        if (this.activeLoans != null) {
+            for (Loan loan : this.activeLoans) {
                 if (loan.getItem().equals(item)) {
                     return loan;
                 }
@@ -95,12 +103,12 @@ public class Library {
      * @return true if the loan was successful, false otherwise.
      */
     public boolean loanItem(Item item, Student student) {
-        if (item == null || student == null || findActiveLoanForItem(item) != null) {
+        if (item == null || student == null || this.findActiveLoanForItem(item) != null) {
             return false;
         }
 
         Loan newLoan = new Loan(item, student, new Date());
-        activeLoans.add(newLoan);
+        this.activeLoans.add(newLoan);
         return true;
     }
 
@@ -117,7 +125,7 @@ public class Library {
             return false;
         }
 
-        Loan loanToRender = findActiveLoanForItem(item);
+        Loan loanToRender = this.findActiveLoanForItem(item);
 
         if (loanToRender == null) {
             return false;
@@ -125,8 +133,8 @@ public class Library {
 
         // Add returnDate and Move loan from activeLoans to completedLoans
         loanToRender.setReturnDate(new Date());
-        activeLoans.remove(loanToRender);
-        completedLoans.add(loanToRender);
+        this.activeLoans.remove(loanToRender);
+        this.completedLoans.add(loanToRender);
 
         return true;
     }
@@ -162,7 +170,7 @@ public class Library {
                     if (author == null) {
                         author = new Author(authorName);
                         authors.put(authorName, author);
-                        System.out.println(author.toString());
+                        //System.out.println(String.format("Create %s", author));
                     }
                     Book book = new Book(isbn, title, author, year, pageCount);
 

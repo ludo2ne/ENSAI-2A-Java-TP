@@ -5,7 +5,10 @@ public abstract class Item {
     protected int year;
     protected int pageCount;
 
-    public Item(String title, int year, int pageCount) {
+    /**
+     * Common constructor for Items.
+     */
+    protected Item(String title, int year, int pageCount) {
         this.title = title;
         this.year = year;
         this.pageCount = pageCount;
@@ -15,7 +18,7 @@ public abstract class Item {
     public abstract String toString();
 
     public String getTitle() {
-        return title;
+        return this.title;
     }
 
 }

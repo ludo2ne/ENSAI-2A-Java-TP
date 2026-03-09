@@ -19,12 +19,12 @@ public class Book extends Item {
     }
 
     public Author getAuthor() {
-        return author;
+        return this.author;
     }
 
     @Override
     public String toString() {
-        return "Book " + title + " written by " + author.toString();
+        return String.format("Book %s written by %s", this.title, this.author);
     }
 
 }

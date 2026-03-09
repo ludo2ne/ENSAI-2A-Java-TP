@@ -9,7 +9,9 @@ public class Loan {
     private Date startDate;
     private Date returnDate;
 
-    // Constructor
+    /**
+     * Constructs a new Loan object.
+     */
     public Loan(Item item, Student borrower, Date startDate) {
         this.item = item;
         this.borrower = borrower;
@@ -31,14 +33,11 @@ public class Loan {
 
     @Override
     public String toString() {
-        if (returnDate != null) {
-            return "Item '" + this.item.getTitle() + "' borrowed by " + this.borrower + " from " + this.startDate
-                    + " to " + this.returnDate
-                    + ".";
-        } else {
-            return "Item '" + this.item.getTitle() + "' borrowed by " + this.borrower + " since " + this.startDate
-                    + ".";
-        }
+        String pattern = (returnDate != null) 
+            ? "Item '%s' borrowed by %s from %s to %s." 
+            : "Item '%s' borrowed by %s since %s.";
+    
+        return String.format(pattern, this.item.getTitle(), this.borrower, this.startDate, this.returnDate);
     }
 
 }

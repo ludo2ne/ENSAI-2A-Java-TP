@@ -3,15 +3,22 @@ package fr.ensai.library;
 public class Person {
 
     // Attributes
-    public String name;
-    public int age;
+    protected String name;
+    protected int age;
 
-    // Constructor
+    /**
+     * Constructs a new Person.
+     * @param name
+     */
     public Person(String name) {
         this.name = name;
     }
 
-    // Constructor
+    /**
+     * Constructs a new Person.
+     * @param name
+     * @param age
+     */
     public Person(String name, int age) {
         this.name = name;
         this.age = age;
@@ -23,6 +30,6 @@ public class Person {
     }
 
     public String toString() {
-        return this.getClass() + " " + this.name;
+        return String.format("%s %s",this.getClass().getSimpleName(), this.name);
     }
 }

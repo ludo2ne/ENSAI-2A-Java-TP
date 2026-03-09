@@ -5,7 +5,9 @@ public class Magazine extends Item {
     private String issn;
     private String issueNumber;
 
-    // Constructor
+    /**
+     * Constructs a new Magazine object.
+     */
     public Magazine(String issn, String title, String issueNumber, int year, int pageCount) {
         super(title, year, pageCount);
         this.issn = issn;
@@ -14,7 +16,7 @@ public class Magazine extends Item {
 
     @Override
     public String toString() {
-        return "Magazine " + title;
+        return String.format("Magazine %s", this.title);
     }
 
 }

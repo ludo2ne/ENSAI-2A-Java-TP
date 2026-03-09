@@ -5,9 +5,11 @@ import java.util.Objects;
 public class Author extends Person {
 
     // Attributes
-    public String nationality;
+    private String nationality;
 
-    // Constructor
+    /**
+     * Constructs a new Author.
+     */
     public Author(String name) {
         super(name);
     }
@@ -25,11 +27,11 @@ public class Author extends Person {
             return false;
 
         Author author = (Author) obj;
-        return Objects.equals(name, author.name);
+        return Objects.equals(this.name, author.name);
     }
 
     @Override
     public String toString() {
-        return "Author " + name;
+        return String.format("Author %s", this.name);
     }
 }
