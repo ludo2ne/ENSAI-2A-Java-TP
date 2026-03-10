@@ -35,11 +35,11 @@ public class Playlist {
     }
 
     public List<Media> getMedias() {
-        return medias;
+        return this.medias;
     }
 
     public int getTotalDuration() {
-        return totalDuration;
+        return this.totalDuration;
     }
 
     /**

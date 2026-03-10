@@ -33,7 +33,7 @@ public class Podcast extends Media {
      */
     @Override
     public String toString() {
-        return "Podcast " + this.title + " by " + this.host;
+        return String.format("Podcast %s by %s", this.title, this.host);
     }
 
     /**

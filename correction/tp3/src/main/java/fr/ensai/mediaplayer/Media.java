@@ -3,7 +3,7 @@ package fr.ensai.mediaplayer;
 /**
  * Represents a media item with common attributes.
  */
-abstract class Media {
+public abstract class Media {
     protected String title;
     protected int duration;
     protected int year;
@@ -15,7 +15,7 @@ abstract class Media {
      * @param duration The duration of the media in seconds.
      * @param year     The year the media was released.
      */
-    public Media(String title, int duration, int year) {
+    protected Media(String title, int duration, int year) {
         this.title = title;
         this.duration = duration;
         this.year = year;

@@ -39,7 +39,7 @@ public class Song {
      */
     @Override
     public String toString() {
-        return "Song " + this.title + " by " + this.singer;
+        return String.format("Song %s by %s",this.title, this.singer);
     }
     
     /**
