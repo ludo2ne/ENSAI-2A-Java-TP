@@ -40,27 +40,26 @@ public class Library {
      * Displays all items currently present in the library.
      */
     public void displayItems() {
-		if (this.items.isEmpty()) {
-			System.out.println("\n[!] The library is empty.");
-			return;
-		}
-	
-		String rowFormat = "| %-10s | %-50s |%n";
-		String separator = "+------------+----------------------------------------------------+";
-	
-		System.out.println("\n" + separator);
-		System.out.printf(rowFormat, "Type", "Title");
-		System.out.println(separator);
-	
-		for (Item item : this.items) {
-			System.out.printf(rowFormat,
-                item.getClass().getSimpleName(),
-				item.getTitle()
-			);
-		}
-	
-		System.out.println(separator);
-	}
+        if (this.items.isEmpty()) {
+            System.out.println("\n[!] The library is empty.");
+            return;
+        }
+
+        String rowFormat = "| %-10s | %-50s |%n";
+        String separator = "+------------+----------------------------------------------------+";
+
+        System.out.println("\n" + separator);
+        System.out.printf(rowFormat, "Type", "Title");
+        System.out.println(separator);
+
+        for (Item item : this.items) {
+            System.out.printf(rowFormat,
+                    item.getClass().getSimpleName(),
+                    item.getTitle());
+        }
+
+        System.out.println(separator);
+    }
 
     /**
      * Retrieves a list of books written by a specific author.
@@ -170,7 +169,7 @@ public class Library {
                     if (author == null) {
                         author = new Author(authorName);
                         authors.put(authorName, author);
-                        //System.out.println(String.format("Create %s", author));
+                        // System.out.println(String.format("Create %s", author));
                     }
                     Book book = new Book(isbn, title, author, year, pageCount);
 
