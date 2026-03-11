@@ -30,8 +30,35 @@ public abstract class Media {
     }
 
     /**
-     * Abstract method to simulate playing the media item.
+     * Abstract method to get lyrics or subtitles.
      */
-    public abstract void play();
+    protected abstract String getText();
 
+    /**
+     * Plays the Media by printing text with a small delay between each word.
+     */
+    public void play() {
+        System.out.println("*".repeat(50));
+        System.out.println("* " + this);
+        System.out.println("*".repeat(50));
+
+        String text = getText();
+
+        if (text == null) {
+            System.out.println("No content available.");
+            return;
+        }
+
+        for (String word : text.split(" ")) {
+            System.out.print(word + " ");
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                System.err.println("Thread was interrupted");
+                return;
+            }
+        }
+        System.out.println();
+    }
 }

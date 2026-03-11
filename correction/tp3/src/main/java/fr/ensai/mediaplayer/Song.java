@@ -2,8 +2,6 @@ package fr.ensai.mediaplayer;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * Represents a song with essential attributes.
@@ -43,7 +41,7 @@ public class Song extends Media {
      */
     @Override
     public String toString() {
-        return "Song " + this.title + " by " + this.singer;
+        return String.format("Song %s by %s", this.title, this.singer);
     }
 
     /**
@@ -67,31 +65,8 @@ public class Song extends Media {
         return Objects.hash(this.title, this.singer, this.year);
     }
 
-    /**
-     * Plays the Song by printing the lyrics with a small delay between each word.
-     */
     @Override
-    public void play() {
-        System.out.println("*".repeat(50));
-        System.out.println("* " + this);
-        System.out.println("*".repeat(50));
-
-        if (this.lyrics != null) {
-
-            List<String> words = Stream.of(this.lyrics.split(" ")).collect(Collectors.toList());
-
-            for (String word : words) {
-                System.out.print(word + " ");
-                try {
-                    Thread.sleep(100);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                    System.err.println("Thread was interrupted");
-                }
-            }
-            System.out.println();
-        } else {
-            System.out.println("No lyrics available.");
-        }
+    public String getText() {
+        return this.lyrics;
     }
 }
