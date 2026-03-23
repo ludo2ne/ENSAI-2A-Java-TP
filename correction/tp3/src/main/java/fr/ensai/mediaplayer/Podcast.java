@@ -1,8 +1,5 @@
 package fr.ensai.mediaplayer;
 
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * Represents a podcast.
  */
@@ -36,27 +33,8 @@ public class Podcast extends Media {
         return String.format("Podcast %s by %s", this.title, this.host);
     }
 
-    /**
-     * Plays the Podcasts by printing the subtitles with a small delay between each
-     * word.
-     */
     @Override
-    public void play() {
-        System.out.println("*".repeat(50));
-        System.out.println("* " + this);
-        System.out.println("*".repeat(50));
-
-        List<String> words = Arrays.asList(this.subtitles.split(" "));
-
-        for (String word : words) {
-            System.out.print(word + " ");
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-                System.err.println("Thread was interrupted");
-            }
-        }
-        System.out.println();
+    public String getText() {
+        return this.subtitles;
     }
 }
