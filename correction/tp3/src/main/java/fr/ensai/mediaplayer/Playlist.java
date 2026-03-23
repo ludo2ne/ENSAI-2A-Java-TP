@@ -53,6 +53,18 @@ public class Playlist {
     }
 
     /**
+     * Adds a list of medias to the playlist.
+     *
+     * @param medias The list of medias to add.
+     */
+    public void addMedia(List<Media> medias) {
+        for (Media media : medias) {
+            this.addMedia(media);
+            this.totalDuration += media.getDuration();
+        }
+    }
+
+    /**
      * Removes a media from the playlist.
      *
      * @param media The media to remove.

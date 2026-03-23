@@ -92,5 +92,15 @@ public class Main {
         System.out.println("p2 duration : " + p2.getTotalDuration());
 
         p2.play(false);
+
+        System.out.println("\n" + "-".repeat(100) + "\n");
+
+        Playlist p = new Playlist("ludo");
+        List<Media> medias = MediaJsonLoader.load("medias.json");
+
+        p.addMedia(medias);
+
+        p.play(false);
+
     }
 }

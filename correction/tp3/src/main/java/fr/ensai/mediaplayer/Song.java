@@ -2,7 +2,6 @@ package fr.ensai.mediaplayer;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -78,7 +77,7 @@ public class Song extends Media {
 
         if (this.lyrics != null) {
 
-            List<String> words = Stream.of(this.lyrics.split(" ")).collect(Collectors.toList());
+            List<String> words = Stream.of(this.lyrics.split(" ")).toList();
 
             for (String word : words) {
                 System.out.print(word + " ");
