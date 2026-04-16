@@ -24,7 +24,7 @@ public class Athlete {
 
     @Override
     public String toString() {
-        return "Athlete (" + firstName + " " + lastName + ", " + age + ")";
+        return String.format("Athlete ({} {}, {})", this.firstName, this.lastName, this.age);
     }
 
 }

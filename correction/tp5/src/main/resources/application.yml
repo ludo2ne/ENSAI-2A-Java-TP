@@ -1,5 +1,5 @@
 server:
-  port: 9000
+  port: 5000
 
 spring:
   application:
@@ -24,6 +24,7 @@ spring:
     init:
       mode: always
       data-locations: classpath:data.sql
+
 logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} %clr(%-5level) %clr(%-36logger{36}){cyan} %msg%n"
@@ -46,3 +47,7 @@ management:
     web:
       exposure:
         include: "*"
+
+springdoc:
+  swagger-ui:
+    path: /api
